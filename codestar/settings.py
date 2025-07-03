@@ -91,6 +91,11 @@ DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL'), conn_max_age=600)
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://*127.0.0.1:8000/",
+    "https://*dashboard.heroku.com/apps"
+]
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
