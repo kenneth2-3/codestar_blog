@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% load static %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-4 text-center">
+        <img src="{% static 'images/nobody.jpg' %}" width="75%" />
+      </div>
+      <div class="col-8">
+        <!-- Title goes between these h2 tags -->
+        <h2>About Ada{{ about.title }}</h2>
+        <!-- Content goes directly underneath this -->
+        The reader was another new feature of the Analytical Engine. Data (numbers) were to be entered on punched cards, using the card-reading technology of the Jacquard loom. Instructions were also to be entered on cards, another idea taken directly from Joseph-Marie Jacquard. The use of instruction cards would make it a programmable device and far more flexible than any machine then in existence. (In 1843 mathematician Ada Lovelace wrote in her notes for a translation of a French article about the Analytical Engine how the machine could be used to follow a program to calculate Bernoulli numbers. For this, she has been called the first computer programmer.) Another element of programmability was to be its ability to execute instructions in other than sequential order. It was to have a kind of decision-making ability in its conditional control transfer, also known as conditional branching, whereby it would be able to jump to a different instruction depending on the value of some data. This extremely powerful feature was missing in many of the early computers of the 20th century.
+
+        By most definitions, the Analytical Engine was a real computer as understood today—or would have been, had Babbage not run into implementation problems again. Actually building his ambitious design was judged infeasible given the current technology, and Babbage’s failure to generate the promised mathematical tables with his Difference Engine had dampened enthusiasm for further government funding. Indeed, it was apparent to the British government that Babbage was more interested in innovation than in constructing tables.
+
+        All the same, Babbage’s Analytical Engine was something new under the sun. Its most revolutionary feature was the ability to change its operation by changing the instructions on punched cards. Until this breakthrough, all the mechanical aids to calculation were merely calculators or, like the Difference Engine, glorified calculators. The Analytical Engine, although not actually completed, was the first machine that deserved to be called a computer.
+
+        {{ about.content|safe }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-right">
+        <!-- Updated on field goes in here -->
+
+        <p class="text-end">
+          <em>Updated on: July 4, 2025, 6:10 a.m. {{ about.updated_on }}</em>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
