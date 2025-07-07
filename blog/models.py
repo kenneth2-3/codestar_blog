@@ -22,7 +22,7 @@ class Post(models.Model):
         ordering = ["created_on"]
     
     def __str__(self):
-        return f"Comment {self.body} by {self.author}"
+        return f"{self.title} by {self.author}"
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -32,3 +32,9 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"
